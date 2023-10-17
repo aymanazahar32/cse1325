@@ -1,0 +1,331 @@
+FULL CREDIT
+===========
+
+QUESTION 1: Why is String[] args changed to a LinkedList in WordSearch.main? (Hint: Examine the WordSearch constructor!)
+
+- WordSearch accepts a List argument
+
+
+QUESTION 2: How many puzzles did your machine need to solve with 1 thread to run for between 30 and 45 seconds: 
+
+-850
+
+
+
+QUESTION 3: Provide the output of 
+
+    time java WordSearch n 1000 ../puzzle??.txt 
+
+where n is 1 to 16 and 1000 is the number of puzzles specified in Question 2. NOTE: You can run all of these with a single bash command if you like (again, replace 1000 with your number of puzzles from Question 2):
+
+for i in {1..16} ; do time java WordSearch $i 1000 ../puzzle??.txt ; done
+
+Example Timing:
+
+ for i in {1..16} ; do time java WordSearch $i 1000 ../puzzle??.txt ; done
+1000 puzzles
+Thread 0: 0-999
+
+real	0m31.872s
+user	0m32.475s
+sys	0m0.224s
+
+1000 puzzles
+Thread 1: 500-999
+Thread 0: 0-499
+
+real	0m14.376s
+user	0m29.078s
+sys	0m0.229s
+
+...and so on
+
+
+
+YOUR Timing:
+
+
+850 puzzles with 1 threads
+Thread 0: 0-849
+
+real    0m33.993s
+user    0m35.390s
+sys     0m0.575s
+
+850 puzzles with 2 threads
+Thread 0: 0-424
+Thread 1: 425-849
+
+real    0m21.827s
+user    0m34.809s
+sys     0m0.719s
+
+850 puzzles with 3 threads
+Thread 1: 284-567
+Thread 0: 0-283
+Thread 2: 568-849
+
+real    0m16.369s
+user    0m43.772s
+sys     0m0.856s
+
+850 puzzles with 4 threads
+Thread 1: 213-425
+Thread 3: 639-849
+Thread 0: 0-212
+Thread 2: 426-638
+
+real    0m12.247s
+user    0m45.094s
+sys     0m0.726s
+
+850 puzzles with 5 threads
+Thread 2: 340-509
+Thread 1: 170-339
+Thread 0: 0-169
+Thread 3: 510-679
+Thread 4: 680-849
+
+real    0m31.370s
+user    0m57.868s
+sys     0m0.962s
+
+850 puzzles with 6 threads
+Thread 0: 0-141
+Thread 1: 142-283
+Thread 3: 426-567
+Thread 2: 284-425
+Thread 5: 710-849
+Thread 4: 568-709
+
+real    0m13.000s
+user    1m12.503s
+sys     0m1.166s
+
+850 puzzles with 7 threads
+Thread 3: 366-487
+Thread 5: 610-731
+Thread 0: 0-121
+Thread 6: 732-849
+Thread 2: 244-365
+Thread 4: 488-609
+Thread 1: 122-243
+
+real    0m10.884s
+user    1m4.471s
+sys     0m1.863s
+
+850 puzzles with 8 threads
+Thread 6: 642-748
+Thread 5: 535-641
+Thread 7: 749-849
+Thread 3: 321-427
+Thread 2: 214-320
+Thread 0: 0-106
+Thread 1: 107-213
+Thread 4: 428-534
+
+real    0m12.827s
+user    1m29.069s
+sys     0m1.610s
+
+850 puzzles with 9 threads
+Thread 6: 570-664
+Thread 2: 190-284
+Thread 4: 380-474
+Thread 5: 475-569
+Thread 0: 0-94
+Thread 1: 95-189
+Thread 7: 665-759
+Thread 8: 760-849
+Thread 3: 285-379
+
+real    0m11.729s
+user    1m28.460s
+sys     0m2.611s
+
+850 puzzles with 10 threads
+Thread 7: 595-679
+Thread 8: 680-764
+Thread 6: 510-594
+Thread 9: 765-849
+Thread 4: 340-424
+Thread 5: 425-509
+Thread 0: 0-84
+Thread 3: 255-339
+Thread 2: 170-254
+Thread 1: 85-169
+
+real    0m13.249s
+user    1m36.898s
+sys     0m2.066s
+
+850 puzzles with 11 threads
+Thread 9: 702-779
+Thread 3: 234-311
+Thread 10: 780-849
+Thread 7: 546-623
+Thread 2: 156-233
+Thread 5: 390-467
+Thread 1: 78-155
+Thread 0: 0-77
+Thread 8: 624-701
+Thread 4: 312-389
+Thread 6: 468-545
+
+real    0m11.817s
+user    1m24.395s
+sys     0m1.947s
+
+850 puzzles with 12 threads
+Thread 6: 426-496
+Thread 5: 355-425
+Thread 4: 284-354
+Thread 3: 213-283
+Thread 1: 71-141
+Thread 0: 0-70
+Thread 9: 639-709
+Thread 8: 568-638
+Thread 7: 497-567
+Thread 2: 142-212
+Thread 10: 710-780
+Thread 11: 781-849
+
+real    0m14.190s
+user    1m38.866s
+sys     0m1.589s
+
+850 puzzles with 13 threads
+Thread 5: 330-395
+Thread 10: 660-725
+Thread 8: 528-593
+Thread 4: 264-329
+Thread 9: 594-659
+Thread 0: 0-65
+Thread 11: 726-791
+Thread 12: 792-849
+Thread 6: 396-461
+Thread 1: 66-131
+Thread 7: 462-527
+Thread 3: 198-263
+Thread 2: 132-197
+
+real    0m12.132s
+user    1m29.342s
+sys     0m1.982s
+
+850 puzzles with 14 threads
+Thread 5: 305-365
+Thread 10: 610-670
+Thread 9: 549-609
+Thread 12: 732-792
+Thread 8: 488-548
+Thread 13: 793-849
+Thread 0: 0-60
+Thread 11: 671-731
+Thread 3: 183-243
+Thread 2: 122-182
+Thread 1: 61-121
+Thread 4: 244-304
+Thread 6: 366-426
+Thread 7: 427-487
+
+real    0m11.338s
+user    1m20.226s
+sys     0m2.890s
+
+850 puzzles with 15 threads
+Thread 2: 114-170
+Thread 5: 285-341
+Thread 4: 228-284
+Thread 1: 57-113
+Thread 7: 399-455
+Thread 6: 342-398
+Thread 11: 627-683
+Thread 12: 684-740
+Thread 3: 171-227
+Thread 10: 570-626
+Thread 9: 513-569
+Thread 0: 0-56
+Thread 13: 741-797
+Thread 8: 456-512
+Thread 14: 798-849
+
+real    0m13.253s
+user    1m38.917s
+sys     0m2.469s
+
+850 puzzles with 16 threads
+Thread 10: 540-593
+Thread 7: 378-431
+Thread 4: 216-269
+Thread 5: 270-323
+Thread 11: 594-647
+Thread 2: 108-161
+Thread 1: 54-107
+Thread 0: 0-53
+Thread 6: 324-377
+Thread 12: 648-701
+Thread 3: 162-215
+Thread 9: 486-539
+Thread 8: 432-485
+Thread 14: 756-809
+Thread 15: 810-849
+Thread 13: 702-755
+
+real    0m13.068s
+user    1m32.647s
+sys     0m2.542s
+
+QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program even slightly?  Why or why not?
+
+Adding more threads can slightly increase the time taken for the program to run but this can also be because of factors like cpu power.
+
+
+
+QUESTION 4: Does adding more threads increase the "system load" (sys), or is it constant regardless of the number of threads?  Why?
+
+- Adding more threads increases the system load, since the CPU needs more power to run multiple threads at once. 
+
+
+
+BONUS
+=====
+
+QUESTION 5: Time your thread pool version of WordSearch exactly as you did for the full credit version. Post your timings here.
+
+YOUR Timing:
+
+
+
+
+
+
+
+QUESTION 6: Is a thread pool faster, slower, or roughly equivalent in performance? 
+
+
+
+
+
+
+
+QUESTION 7: Compare your full credit and bonus solution code. Which do you believe is more supportable over a long lifetime of evolving hardware and environments?
+
+
+
+
+
+
+
+EXTREME BONUS
+=============
+
+QUESTION 8: Post your final timings here. (The "race" on Antares will determine the actual winner - this just lets me know you're competing!)
+
+
+
+
+
+
+
